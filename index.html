@@ -723,8 +723,8 @@ h1          {animation:fadeUp .5s .08s ease both}
       You burn hours before every campaign — <strong>figuring out who to target, which role to write to, what angle will land.</strong> We give you that clarity in 20 minutes. So you launch with precision, not guesswork.
     </p>
     <div class="waitlist-form" id="waitlist">
-      <input type="email" placeholder="enter email address_">
-      <button onclick="handleWL(this)">Request access</button>
+      <input type="email" placeholder="enter email address_" id="hero-email">
+      <button onclick="handleWL(this,'hero-email')">Request access</button>
     </div>
     <p class="form-note">// BETA ACCESS · LIMITED SLOTS</p>
 
@@ -925,8 +925,8 @@ h1          {animation:fadeUp .5s .08s ease both}
     <div class="cta-h">Stop<br><em>guessing.</em><br>Lock on.</div>
     <p class="cta-sub">Limited beta — 15 slots total. We personally review your first campaign strategy. When slots are gone, they're gone.</p>
     <div class="cta-form">
-      <input type="email" placeholder="enter email address_">
-      <button onclick="handleWL(this)">Claim your slot</button>
+      <input type="email" placeholder="enter email address_" id="cta-email">
+      <button onclick="handleWL(this,'cta-email')">Claim your slot</button>
     </div>
     <p class="cta-note">// NO SPAM · NO PITCH DECKS · JUST ACCESS</p>
   </div>
@@ -964,14 +964,17 @@ function renderMFD() {
   document.getElementById('open-n').textContent = TOTAL - TAKEN;
 }
 
-function handleWL(btn) {
-  var form = btn.parentElement;
-  var input = form.querySelector('input');
-  var email = input.value.trim();
+var TALLY_URL = 'https://tally.so/r/VLo1gy';
+
+function handleWL(btn, inputId) {
+  var input = document.getElementById(inputId);
+  var email = input ? input.value.trim() : '';
   if (!email || !email.includes('@')) {
-    input.style.borderColor = '#e84a2f';
-    input.focus();
-    setTimeout(function(){ input.style.borderColor = ''; }, 1500);
+    if (input) {
+      input.style.borderColor = '#e84a2f';
+      input.focus();
+      setTimeout(function(){ input.style.borderColor = ''; }, 1500);
+    }
     return;
   }
   if (TAKEN < TOTAL) {
@@ -981,9 +984,14 @@ function handleWL(btn) {
   btn.textContent = 'SLOT LOCKED ■';
   btn.style.background = '#166534';
   btn.style.pointerEvents = 'none';
-  input.value = '';
-  input.placeholder = 'slot secured — we\'ll be in touch_';
-  input.disabled = true;
+  if (input) {
+    input.value = '';
+    input.placeholder = 'redirecting...';
+    input.disabled = true;
+  }
+  setTimeout(function(){
+    window.open(TALLY_URL + '?email=' + encodeURIComponent(email), '_blank');
+  }, 400);
 }
 
 renderMFD();
