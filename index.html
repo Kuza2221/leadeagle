@@ -26,10 +26,10 @@
   --head:     'Barlow Condensed', sans-serif;
   --body:     'Barlow', sans-serif;
 }
- 
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
- 
+
 body {
   background: var(--bg);
   color: var(--text);
@@ -38,7 +38,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
 }
- 
+
 /* SCANLINE OVERLAY */
 body::before {
   content: '';
@@ -54,7 +54,7 @@ body::before {
   pointer-events: none;
   z-index: 9999;
 }
- 
+
 /* NAV */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -65,7 +65,7 @@ nav {
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(8px);
 }
- 
+
 .nav-logo {
   font-family: var(--head);
   font-weight: 700;
@@ -76,7 +76,7 @@ nav {
   text-transform: uppercase;
 }
 .nav-logo span { color: var(--green); }
- 
+
 .nav-status {
   display: flex; align-items: center; gap: 16px;
 }
@@ -110,7 +110,7 @@ nav {
   0%,100% { opacity: 1; }
   50% { opacity: .3; }
 }
- 
+
 .nav-cta {
   font-family: var(--mono);
   font-size: 11px;
@@ -126,7 +126,7 @@ nav {
   clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
 }
 .nav-cta:hover { background: var(--green2); }
- 
+
 /* HERO */
 .hero {
   min-height: 100vh;
@@ -139,7 +139,7 @@ nav {
   margin: 0 auto;
   position: relative;
 }
- 
+
 /* grid bg */
 .hero::before {
   content: '';
@@ -152,9 +152,9 @@ nav {
   opacity: .4;
   pointer-events: none;
 }
- 
+
 .hero-content { position: relative; z-index: 1; }
- 
+
 .hero-code {
   font-family: var(--mono);
   font-size: 11px;
@@ -167,7 +167,7 @@ nav {
   content: '▶';
   font-size: 8px;
 }
- 
+
 h1 {
   font-family: var(--head);
   font-size: clamp(52px, 6vw, 80px);
@@ -180,7 +180,7 @@ h1 {
 }
 h1 .accent { color: var(--green); }
 h1 .italic { font-style: italic; font-weight: 300; color: var(--muted); }
- 
+
 .tagline {
   font-family: var(--mono);
   font-size: 13px;
@@ -190,7 +190,7 @@ h1 .italic { font-style: italic; font-weight: 300; color: var(--muted); }
   margin-bottom: 28px;
   padding-left: 2px;
 }
- 
+
 .hero-sub {
   font-size: 17px;
   color: var(--muted);
@@ -200,7 +200,7 @@ h1 .italic { font-style: italic; font-weight: 300; color: var(--muted); }
   font-weight: 400;
 }
 .hero-sub strong { color: var(--text); font-weight: 600; }
- 
+
 .hero-form {
   display: flex;
   gap: 0;
@@ -237,7 +237,7 @@ h1 .italic { font-style: italic; font-weight: 300; color: var(--muted); }
   clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
 }
 .hero-form button:hover { background: var(--green2); }
- 
+
 .hero-note {
   margin-top: 12px;
   font-family: var(--mono);
@@ -245,7 +245,7 @@ h1 .italic { font-style: italic; font-weight: 300; color: var(--muted); }
   color: var(--dimmed);
   letter-spacing: .04em;
 }
- 
+
 /* RADAR VISUAL */
 .hero-visual {
   position: relative;
@@ -254,13 +254,13 @@ h1 .italic { font-style: italic; font-weight: 300; color: var(--muted); }
   align-items: center;
   justify-content: center;
 }
- 
+
 .radar-wrap {
   position: relative;
   width: 360px;
   height: 360px;
 }
- 
+
 .radar-ring {
   position: absolute;
   border-radius: 50%;
@@ -272,7 +272,7 @@ h1 .italic { font-style: italic; font-weight: 300; color: var(--muted); }
 .radar-ring:nth-child(2) { width: 160px; height: 160px; }
 .radar-ring:nth-child(3) { width: 240px; height: 240px; }
 .radar-ring:nth-child(4) { width: 320px; height: 320px; border-color: var(--border); }
- 
+
 .radar-cross {
   position: absolute;
   top: 50%; left: 50%;
@@ -286,7 +286,7 @@ h1 .italic { font-style: italic; font-weight: 300; color: var(--muted); }
 }
 .radar-cross::before { width: 1px; height: 100%; left: 50%; }
 .radar-cross::after  { width: 100%; height: 1px; top: 50%; }
- 
+
 .radar-sweep {
   position: absolute;
   top: 50%; left: 50%;
@@ -307,7 +307,7 @@ h1 .italic { font-style: italic; font-weight: 300; color: var(--muted); }
   background: linear-gradient(180deg, transparent, rgba(74,222,128,.3), transparent);
   transform: rotate(0deg);
 }
- 
+
 /* targets on radar */
 .radar-target {
   position: absolute;
@@ -334,11 +334,11 @@ h1 .italic { font-style: italic; font-weight: 300; color: var(--muted); }
   from { transform: scale(1); opacity: .5; }
   to   { transform: scale(2.5); opacity: 0; }
 }
- 
+
 .t1 { transform: translate(calc(-50% + 60px), calc(-50% - 80px)); animation-delay: 0s; }
 .t2 { transform: translate(calc(-50% - 90px), calc(-50% + 30px)); animation-delay: .7s; }
 .t3 { transform: translate(calc(-50% + 100px), calc(-50% + 50px)); animation-delay: 1.4s; }
- 
+
 .radar-label {
   position: absolute;
   font-family: var(--mono);
@@ -350,7 +350,7 @@ h1 .italic { font-style: italic; font-weight: 300; color: var(--muted); }
 .rl1 { top: 28%; left: 60%; }
 .rl2 { top: 55%; left: 12%; }
 .rl3 { top: 67%; left: 60%; }
- 
+
 .radar-center {
   position: absolute;
   top: 50%; left: 50%;
@@ -360,7 +360,7 @@ h1 .italic { font-style: italic; font-weight: 300; color: var(--muted); }
   background: var(--green);
   box-shadow: 0 0 20px var(--green);
 }
- 
+
 /* DATA PANEL below radar */
 .radar-panel {
   margin-top: 16px;
@@ -381,7 +381,7 @@ h1 .italic { font-style: italic; font-weight: 300; color: var(--muted); }
 .rp-row:last-child { border-bottom: none; }
 .rp-key { color: var(--muted); letter-spacing: .06em; }
 .rp-val { color: var(--green); letter-spacing: .04em; }
- 
+
 /* STATS */
 .stats {
   border-top: 1px solid var(--border);
@@ -424,14 +424,14 @@ h1 .italic { font-style: italic; font-weight: 300; color: var(--muted); }
   color: var(--dimmed);
   letter-spacing: .08em;
 }
- 
+
 /* SECTION */
 .section {
   max-width: 1280px;
   margin: 0 auto;
   padding: 100px 48px;
 }
- 
+
 .s-eye {
   font-family: var(--mono);
   font-size: 11px;
@@ -445,7 +445,7 @@ h1 .italic { font-style: italic; font-weight: 300; color: var(--muted); }
   content: '//';
   color: var(--dimmed);
 }
- 
+
 h2 {
   font-family: var(--head);
   font-size: clamp(36px, 4vw, 52px);
@@ -457,7 +457,7 @@ h2 {
   margin-bottom: 16px;
 }
 h2 em { font-style: italic; font-weight: 300; color: var(--green); }
- 
+
 /* PROBLEM GRID */
 .prob-grid {
   display: grid;
@@ -502,7 +502,7 @@ h2 em { font-style: italic; font-weight: 300; color: var(--green); }
   color: var(--muted);
   line-height: 1.7;
 }
- 
+
 /* HOW */
 .how-grid {
   display: grid;
@@ -519,6 +519,26 @@ h2 em { font-style: italic; font-weight: 300; color: var(--green); }
   border-bottom: 1px solid var(--border);
 }
 .step:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+.step-arrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 0 20px 50px;
+  margin-top: -20px;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--green3);
+  letter-spacing: .08em;
+}
+.step-arrow::before {
+  content: '';
+  width: 1px;
+  height: 28px;
+  background: linear-gradient(180deg, var(--green3), transparent);
+  display: block;
+}
+
 .step-n {
   font-family: var(--mono);
   font-size: 11px;
@@ -541,7 +561,7 @@ h2 em { font-style: italic; font-weight: 300; color: var(--green); }
   color: var(--muted);
   line-height: 1.7;
 }
- 
+
 .output-terminal {
   background: var(--bg);
   border: 1px solid var(--border2);
@@ -600,7 +620,7 @@ h2 em { font-style: italic; font-weight: 300; color: var(--green); }
   0%,100% { opacity: 1; }
   50% { opacity: 0; }
 }
- 
+
 /* FOR WHO */
 .who-grid {
   display: grid;
@@ -652,7 +672,7 @@ h2 em { font-style: italic; font-weight: 300; color: var(--green); }
   line-height: 1.6;
   letter-spacing: .02em;
 }
- 
+
 /* CTA */
 .cta-section {
   background: var(--bg2);
@@ -753,7 +773,7 @@ h2 em { font-style: italic; font-weight: 300; color: var(--green); }
   color: var(--dimmed);
   letter-spacing: .04em;
 }
- 
+
 /* FOOTER */
 footer {
   padding: 28px 48px;
@@ -779,7 +799,7 @@ footer {
   color: var(--dimmed);
   letter-spacing: .04em;
 }
- 
+
 /* ANIMATIONS */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
@@ -792,7 +812,7 @@ h1            { animation: fadeUp .5s .1s ease both; }
 .hero-form    { animation: fadeUp .5s .25s ease both; }
 .hero-note    { animation: fadeUp .5s .3s ease both; }
 .hero-visual  { animation: fadeUp .6s .2s ease both; }
- 
+
 @media (max-width: 900px) {
   nav { padding: 0 20px; }
   .hero { grid-template-columns: 1fr; padding: 90px 20px 50px; gap: 40px; }
@@ -812,7 +832,7 @@ h1            { animation: fadeUp .5s .1s ease both; }
   .radar-cross { width: 240px; height: 240px; }
   .radar-sweep { width: 120px; }
 }
- 
+
 /* MFD PANEL */
 .mfd-panel { background: var(--surface); border: 1px solid var(--border2); margin-top: 20px; max-width: 440px; }
 .mfd-topbar { background: var(--bg3); border-bottom: 1px solid var(--border); padding: 8px 14px; display: flex; align-items: center; justify-content: space-between; }
@@ -834,7 +854,7 @@ h1            { animation: fadeUp .5s .1s ease both; }
 </style>
 </head>
 <body>
- 
+
 <nav>
   <a href="#" class="nav-logo">Lead<span>Eagle</span></a>
   <div class="nav-status">
@@ -843,7 +863,7 @@ h1            { animation: fadeUp .5s .1s ease both; }
     <a href="#waitlist" class="nav-cta">Get access</a>
   </div>
 </nav>
- 
+
 <!-- HERO -->
 <section>
   <div class="hero">
@@ -863,7 +883,7 @@ h1            { animation: fadeUp .5s .1s ease both; }
         <button onclick="handleWL(this,'hero-email')">Request access</button>
       </div>
       <p class="hero-note">// BETA ACCESS · 15 SLOTS ONLY</p>
- 
+
       <!-- MFD -->
       <div class="mfd-panel">
         <div class="mfd-topbar"><span class="mfd-title">ACCESS SLOTS · BETA PROGRAM</span><span class="mfd-sub">MFD-01 · STATUS</span></div>
@@ -875,7 +895,7 @@ h1            { animation: fadeUp .5s .1s ease both; }
         </div>
       </div>
     </div>
- 
+
     <div class="hero-visual">
       <div>
         <div class="radar-wrap">
@@ -919,7 +939,7 @@ h1            { animation: fadeUp .5s .1s ease both; }
     </div>
   </div>
 </section>
- 
+
 <!-- STATS -->
 <div class="stats">
   <div class="stats-inner">
@@ -940,7 +960,7 @@ h1            { animation: fadeUp .5s .1s ease both; }
     </div>
   </div>
 </div>
- 
+
 <!-- PROBLEM -->
 <section class="section">
   <div class="s-eye">Mission briefing</div>
@@ -966,7 +986,7 @@ h1            { animation: fadeUp .5s .1s ease both; }
     </div>
   </div>
 </section>
- 
+
 <!-- HOW IT WORKS -->
 <section class="section" style="padding-top:0">
   <div class="s-eye">Engagement protocol</div>
@@ -1002,7 +1022,7 @@ h1            { animation: fadeUp .5s .1s ease both; }
         </div>
       </div>
     </div>
- 
+
     <div class="output-terminal">
       <div class="term-bar">
         <div class="term-dot" style="background:#e84a2f"></div>
@@ -1036,7 +1056,7 @@ h1            { animation: fadeUp .5s .1s ease both; }
     </div>
   </div>
 </section>
- 
+
 <!-- FOR WHO -->
 <section class="section" style="padding-top:0">
   <div class="s-eye">Target profiles</div>
@@ -1064,7 +1084,7 @@ h1            { animation: fadeUp .5s .1s ease both; }
     </div>
   </div>
 </section>
- 
+
 <!-- CTA -->
 <section class="cta-section">
   <div class="cta-inner">
@@ -1072,24 +1092,24 @@ h1            { animation: fadeUp .5s .1s ease both; }
     <div class="cta-h">Stop<br><em>guessing.</em><br>Lock on.</div>
     <p class="cta-sub">Join 100 founders getting early access. Free during beta. We'll personally review your first campaign strategy.</p>
     <div class="cta-form">
-      <input type="email" placeholder="enter email address_">
-      <button onclick="handleWL(this)">Request access</button>
+      <input type="email" placeholder="enter email address_" id="cta-email">
+      <button onclick="handleWL(this,'cta-email')">Request access</button>
     </div>
     <p class="cta-note">// NO SPAM · NO PITCH DECKS · JUST EARLY ACCESS</p>
     <p style="margin-top:20px"><a href="https://leadeagle-app.vercel.app" target="_blank" class="try-btn">&#9654; Try the tool now</a></p>
   </div>
 </section>
- 
+
 <footer>
   <a href="#" class="foot-logo">Lead<span>Eagle</span></a>
   <span class="foot-text">// THE STRATEGIC LAYER BEFORE YOUR OUTBOUND CAMPAIGN</span>
 </footer>
- 
+
 <script>
 var TALLY_URL = 'https://tally.so/r/VLo1gy';
 var TOTAL = 15;
 var TAKEN = 9;
- 
+
 function renderMFD() {
   var grid = document.getElementById('mfd-grid');
   if (!grid) return;
@@ -1106,7 +1126,7 @@ function renderMFD() {
   if (tn) tn.textContent = TAKEN;
   if (on) on.textContent = TOTAL - TAKEN;
 }
- 
+
 function handleWL(btn, inputId) {
   var input = document.getElementById(inputId);
   var email = input ? input.value.trim() : '';
@@ -1121,7 +1141,7 @@ function handleWL(btn, inputId) {
   if (input) { input.value = ''; input.placeholder = 'redirecting...'; input.disabled = true; }
   setTimeout(function(){ window.open(TALLY_URL + '?email=' + encodeURIComponent(email), '_blank'); }, 400);
 }
- 
+
 renderMFD();
 </script>
 </body>
